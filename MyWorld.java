@@ -52,7 +52,7 @@ public class MyWorld implements ActionListener {
 		passingTime = new Timer((int)(refreshPeriod*1000), this); 
 	}
 	/**
-	* 
+	* @return MyWorld's gravity
 	*/
 	public double getGravity(){
 		return gravity;
