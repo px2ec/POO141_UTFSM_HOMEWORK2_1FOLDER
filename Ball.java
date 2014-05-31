@@ -123,7 +123,7 @@ public class Ball extends PhysicsElement implements Simulateable, SpringAttachab
 	}
 
 	/**
-	* @return Update graphic element
+	* 
 	*/
 	public void updateView(Graphics2D g) {
 		/*

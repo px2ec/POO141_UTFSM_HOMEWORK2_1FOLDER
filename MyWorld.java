@@ -96,7 +96,7 @@ public class MyWorld implements ActionListener {
 	}
 
 	/**
-	* @return Start simulation
+	* 
 	*/
 	public void start() {
 		if (passingTime.isRunning())
