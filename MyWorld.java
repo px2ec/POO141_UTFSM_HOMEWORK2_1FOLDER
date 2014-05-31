@@ -1,3 +1,9 @@
+
+/**
+ * Ball class
+ * @author Pedro Espinoza, Luis Ojeda, Felipe Veas
+ */
+
 import java.util.*;
 import java.io.*;
 import javax.swing.Timer;
