@@ -1,6 +1,6 @@
 
 /**
- * Ball class
+ * MyWorld class
  * @author Pedro Espinoza, Luis Ojeda, Felipe Veas
  */
 

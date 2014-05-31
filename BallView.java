@@ -1,6 +1,6 @@
 
 /**
- * Ball class
+ * BallView class
  * @author Pedro Espinoza, Luis Ojeda, Felipe Veas
  */
 
