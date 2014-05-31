@@ -55,11 +55,11 @@ public class MouseListener extends MouseAdapter implements KeyListener {
 		MyWorldView.SPACE_INVERSE_TRANSFORM.transform(e.getPoint(),p);// pixels to meters.
 		inpos.clear();
 		inpos = world.find(p.getX(), p.getY());
-		//for (PhysicsElement el: inpos)
-		//	System.out.println(el.getDescription());
+		
 		if (inpos.size() == 0) return;
 		litr = inpos.listIterator();
 		PhysicsElement newElement = litr.next();
+		
 		if (newElement == currentElement) return;
 		if (currentElement != null) {
 			currentElement.setReleased();
