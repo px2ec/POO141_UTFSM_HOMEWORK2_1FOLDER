@@ -25,6 +25,15 @@ public class Rubber extends PhysicsElement implements Simulateable, Elastic {
 		currentLength = restLength;
 		view = new RubberView(this);
 	}
+	
+	public boolean isAattachedTo(SpringAttachable sa){
+		return (sa == this.a_end);
+	}
+	
+	public boolean isBattachedTo(SpringAttachable sa){
+		return (sa == this.b_end);
+	}
+	
 	public void attachAend(SpringAttachable sa) {  // note: we attach a spring to a ball, 
 		if(a_end == null){                            // not the other way around.
 		  //a_end.detachSpring(this);
@@ -79,7 +88,8 @@ public class Rubber extends PhysicsElement implements Simulateable, Elastic {
 			return force;
 		double a_pos = getAendPosition();
 		double b_pos = getBendPosition();
-		double stretch = Math.abs(b_pos-a_pos)-restLength;
+		double stretch = Math.abs(b_pos-a_pos) - restLength;
+		if (stretch < 0) return force;
 		force = stretch*stiffness;
 		if ((ball==a_end)^(a_pos<b_pos)) return -force;
 		return force;
@@ -97,7 +107,7 @@ public class Rubber extends PhysicsElement implements Simulateable, Elastic {
 		return view.contains(x,y);
 	}
 	public String getDescription() {
-		return "Spring_"+ getId()+":a_end\tb_end";
+		return "Rubber_"+ getId()+":a_end\tb_end";
 	}
 	public String getState() {
 		String s = getAendPosition() + "\t" + getBendPosition();

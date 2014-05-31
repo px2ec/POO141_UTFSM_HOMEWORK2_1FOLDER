@@ -25,6 +25,15 @@ public class Spring extends PhysicsElement implements Simulateable, Elastic {
 		currentLength = restLength;
 		view = new SpringView(this);
 	}
+	
+	public boolean isAattachedTo(SpringAttachable sa){
+		return (sa == this.a_end);
+	}
+	
+	public boolean isBattachedTo(SpringAttachable sa){
+		return (sa == this.b_end);
+	}
+	
 	public void attachAend(SpringAttachable sa) {  // note: we attach a spring to a ball, 
 		if(a_end == null){                            // not the other way around.
 		  //a_end.detachSpring(this);

@@ -90,20 +90,21 @@ public class MouseListener extends MouseAdapter implements KeyListener {
 			 // we dragged a spring, so we look for and attachable element near by  
 			SpringAttachable element = world.findAttachableElement(spring);
 			if (element != null) {
-				//System.out.println("A:"+spring.getAendPosition()+"; B:"+spring.getBendPosition());
+				//System.out.print("Voy a enganchar");
 				double pos_e  = ((SpringAttachable)element).getPosition();
 				double rad  = ((SpringAttachable)element).getRadius();
 				// we dragged a spring and it is near an attachable element,
 				// so we hook it to a spring end.
 				double a=spring.getAendPosition();
-				//System.out.println("Ball:" + (pos_e - rad) + "," + (pos_e + rad));
-				if ((a > pos_e - rad) && (a < pos_e + rad))
-				//if (a==p.getX())
+				if ((a > pos_e - rad) && (a < pos_e + rad)) {
 					spring.attachAend(element);
+					//System.out.println(" en A");
+				}
 				double b=spring.getBendPosition();
-				if ((b > pos_e - rad) && (b < pos_e + rad))
-				//if (b==p.getX())
+				if ((b > pos_e - rad) && (b < pos_e + rad)) {
 					spring.attachBend(element);
+					//System.out.println(" en B");
+				}
 			 }
 		}    
 		currentElement.setReleased();

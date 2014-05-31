@@ -160,6 +160,8 @@ public class MyWorld implements ActionListener {
     public SpringAttachable findAttachableElement(Elastic s){
 		for (PhysicsElement e: elements) {
 			if (e instanceof SpringAttachable) {
+				if (s.isAattachedTo((SpringAttachable)e)) continue;
+				if (s.isBattachedTo((SpringAttachable)e)) continue;
 				double pos_e  = ((SpringAttachable)e).getPosition();
 				double rad  = ((SpringAttachable)e).getRadius();
 				double posA = s.getAendPosition();
