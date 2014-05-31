@@ -13,6 +13,7 @@ public class BallView {
 	private Ball ball;
 
 	/**
+	* Constructor BallViw. Initialize a new graphic ball.
 	* @param b   ball class asociated
 	*/
 	public BallView (Ball b) {
@@ -21,6 +22,7 @@ public class BallView {
 	}
 
 	/**
+	* Check that point x,y existing into shape.
 	* @return Its true if that point (x, y) is contained
 	* @param x   x posittion
 	* @param y   y position
@@ -37,18 +39,21 @@ public class BallView {
 	}
 
 	/**
+	* Set select state graphic element.
 	*/
 	public void setSelected() {
 		color = Color.RED;
 	}
 
 	/**
+	* Set released state graphic element.
 	*/
 	public void setReleased() {
 		color = Color.BLUE;
 	}
 
 	/**
+	* Update graphic element.
 	*/
 	void updateView(Graphics2D g) {
 		double radius = ball.getRadius();

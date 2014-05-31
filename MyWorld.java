@@ -24,12 +24,14 @@ public class MyWorld implements ActionListener {
 	private ArrayList<PhysicsElement> inpos;
 
 	/**
+	* Constructor Myworld. Initialize a new physic World.
 	*/
 	public MyWorld() {
 		this(System.out, -9.8);
 	}
 
 	/**
+	* Constructor Myworld. Initialize a new physic World with custom params.
 	* @param output  text out
 	*/
 	public MyWorld(PrintStream output) {
@@ -37,6 +39,7 @@ public class MyWorld implements ActionListener {
 	}
 
 	/**
+	* Constructor Myworld. Initialize a new physic World with custom params.
 	* @param output  text out
 	* @param gravity   World's gravity
 	*/
@@ -51,7 +54,9 @@ public class MyWorld implements ActionListener {
 		inpos = new ArrayList<PhysicsElement>();
 		passingTime = new Timer((int)(refreshPeriod*1000), this); 
 	}
+
 	/**
+	* Get gravity value from this world.
 	* @return MyWorld's gravity
 	*/
 	public double getGravity(){
@@ -59,6 +64,7 @@ public class MyWorld implements ActionListener {
 	}
 
 	/**
+	* Set gravity value in this world.
 	* @param gr   Gravity's value
 	*/
 	public void setGravity(double gr){
@@ -66,6 +72,7 @@ public class MyWorld implements ActionListener {
 	}
 
 	/**
+	* Add a new physic element.
 	* @param e   Physic element
 	*/
 	public void addElement(PhysicsElement e) {
@@ -74,6 +81,7 @@ public class MyWorld implements ActionListener {
 	}
 
 	/**
+	* Asociate a graphic world class.
 	* @param view   graphic world
 	*/
 	public void setView(MyWorldView view) {
@@ -81,6 +89,7 @@ public class MyWorld implements ActionListener {
 	}
 
 	/**
+	* Set delta time in this world.
 	* @param delta   asign delta
 	*/
 	public void setDelta_t(double delta) {
@@ -88,6 +97,7 @@ public class MyWorld implements ActionListener {
 	}
 
 	/**
+	* Set sample-rate in this world.
 	* @param rp   sample-rate value
 	*/
 	public void setRefreshPeriod(double rp) {
@@ -96,7 +106,7 @@ public class MyWorld implements ActionListener {
 	}
 
 	/**
-	* 
+	* Start simulation.
 	*/
 	public void start() {
 		if (passingTime.isRunning())
@@ -107,6 +117,7 @@ public class MyWorld implements ActionListener {
 	}
 
 	/**
+	* Stop Simulation.
 	*/
 	public void stop() {
 		passingTime.stop();
@@ -114,6 +125,7 @@ public class MyWorld implements ActionListener {
 	}
 
 	/**
+	* Simulate iterative way.
 	* @param event   param for listener
 	*/
 	public void actionPerformed(ActionEvent event) {
@@ -142,12 +154,14 @@ public class MyWorld implements ActionListener {
 	}
 
 	/**
+	* Update graphic world.
 	*/
 	public void repaintView() {
 		view.repaintView();
 	}
 
 	/**
+	* Check that elements is colliding with something.
 	* @return Ball colliding
 	* @param me   consulting ball
 	*/
@@ -161,6 +175,7 @@ public class MyWorld implements ActionListener {
 	}
 
 	/**
+	* Check elements asociated with elastic elements.
 	* @return Foundnd attachable elements
 	* @param s   Spring source
 	*/
@@ -181,6 +196,7 @@ public class MyWorld implements ActionListener {
     }
 
 	/**
+	* Get all physic elements asociated with this world.
 	* @return Elements from this world
 	*/
 	public ArrayList<PhysicsElement> getPhysicsElements() {
@@ -188,6 +204,7 @@ public class MyWorld implements ActionListener {
 	}
 
 	/**
+	* Get all physic elements in (x,y) point.
 	* @return Elements in a point
 	* @param x   x position
 	* @param y   y position

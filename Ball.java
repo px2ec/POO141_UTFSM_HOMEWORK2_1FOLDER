@@ -20,12 +20,16 @@ public class Ball extends PhysicsElement implements Simulateable, SpringAttachab
 	private BallView view;           // Ball view of Model-View-Controller design pattern
 	private ArrayList<Elastic> springs; // ArrayList can grow, arrays cannot
 
+	/**
+	* Constructor Ball. Initialize a new physic ball.
+	*/
 	private Ball() {
 		// Nobody can create a block without state
 		this(1.0, 0.1, 0,0);
 	}
 
 	/**
+	* Constructor Ball. Initialize a new physic ball with custom params.
 	* @param mass   ball's mass
 	* @param radius   ball's radius
 	* @param position   ball's position
@@ -44,6 +48,7 @@ public class Ball extends PhysicsElement implements Simulateable, SpringAttachab
 	}
 
 	/**
+	* Get the Ball' mass.
 	* @return Ball's <tt>mass</tt>
 	*/
 	public double getMass() {
@@ -51,6 +56,7 @@ public class Ball extends PhysicsElement implements Simulateable, SpringAttachab
 	}
 
 	/**
+	* Get the Ball's radius.
 	* @return Ball's <tt>radius</tt>
 	*/
 	public double getRadius() {
@@ -58,6 +64,7 @@ public class Ball extends PhysicsElement implements Simulateable, SpringAttachab
 	}
 
 	/**
+	* Get the Ball's position.
 	* @return Ball's <tt>position</tt>
 	*/
 	public double getPosition() {
@@ -65,6 +72,7 @@ public class Ball extends PhysicsElement implements Simulateable, SpringAttachab
 	}
 
 	/**
+	* Get the Ball's speed.
 	* @return Ball's <tt>speed</tt>
 	*/
 	public double getSpeed() {
@@ -72,6 +80,7 @@ public class Ball extends PhysicsElement implements Simulateable, SpringAttachab
 	}
 	
 	/**
+	* Get the Ball's net force.
 	* @return Ball's <tt>net force</tt>
 	*/
 	private double getNetForce() {
@@ -85,6 +94,7 @@ public class Ball extends PhysicsElement implements Simulateable, SpringAttachab
 	}
 
 	/**
+	* Compute physics state.
 	* @param delta_t   time's delta for computing
 	* @param world   World class
 	*/
@@ -104,6 +114,7 @@ public class Ball extends PhysicsElement implements Simulateable, SpringAttachab
 	}
 
 	/**
+	* Check that ball is colliding with something.
 	* @return If this collide with another element
 	* @param b   referency element
 	*/
@@ -115,6 +126,7 @@ public class Ball extends PhysicsElement implements Simulateable, SpringAttachab
 	}
 
 	/**
+	* Update state after computing.
 	*/
 	public void updateState() {
 		pos_t = pos_tPlusDelta;
@@ -123,7 +135,7 @@ public class Ball extends PhysicsElement implements Simulateable, SpringAttachab
 	}
 
 	/**
-	* 
+	* Update graphic element.
 	*/
 	public void updateView(Graphics2D g) {
 		/*
@@ -134,6 +146,7 @@ public class Ball extends PhysicsElement implements Simulateable, SpringAttachab
 	}
 
 	/**
+	* Check that point x,y existing into shape.
 	* @return Its true if that point (x, y) is contained
 	* @param x   x posittion
 	* @param y   y position
@@ -143,18 +156,21 @@ public class Ball extends PhysicsElement implements Simulateable, SpringAttachab
 	}
 
 	/**
+	* Set select state graphic element.
 	*/
 	public void setSelected() {
 		view.setSelected();
 	}
 
 	/**
+	* Set released state graphic element.
 	*/
 	public void setReleased() {
 		view.setReleased();
 	}
 
 	/**
+	* Drag physic element with graphic element.
 	* @param x   x position target
 	*/
 	public void dragTo(double x) {
@@ -162,6 +178,7 @@ public class Ball extends PhysicsElement implements Simulateable, SpringAttachab
 	}
 
 	/**
+	* Get ball' description.
 	* @return Description for this element
 	*/
 	public String getDescription() {
@@ -169,13 +186,15 @@ public class Ball extends PhysicsElement implements Simulateable, SpringAttachab
 	}
 
 	/**
-	* @return Get ball's state
+	* Get ball's state
+	* @return Ball's state as string.
 	*/
 	public String getState() {
 		return getPosition() + "";
 	}
 
 	/**
+	* Attach an elastic element.
 	* @param spring   spring element
 	*/
 	public void attachSpring(Elastic spring) {
@@ -186,6 +205,7 @@ public class Ball extends PhysicsElement implements Simulateable, SpringAttachab
 	}
 
 	/**
+	* Detach an elastic element
 	* @param spring   spring element
 	*/
 	public void detachSpring(Elastic spring) {
