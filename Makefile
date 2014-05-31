@@ -62,8 +62,6 @@ run: $(MAIN).class
 
 clean:
 	rm -rf *.class
-	rm -r ./Documentation/*
-	rmdir ./Documentation
 
 mrproper:
 	make clean
