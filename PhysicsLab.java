@@ -78,7 +78,11 @@ class PhysicsLab_GUI extends JFrame {
 		menuItem.addActionListener(menu_l);
 		submenu.add(menuItem);
 
-		menuItem = new JMenuItem("View Refresh time");
+		menuItem = new JMenuItem("View refresh time");
+		menuItem.addActionListener(menu_l);
+		submenu.add(menuItem);
+
+		menuItem = new JMenuItem("Set gravity");
 		menuItem.addActionListener(menu_l);
 		submenu.add(menuItem);
 

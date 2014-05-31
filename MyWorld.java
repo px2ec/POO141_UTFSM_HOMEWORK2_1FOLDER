@@ -59,6 +59,13 @@ public class MyWorld implements ActionListener {
 	}
 
 	/**
+	* @param gr   Gravity's value
+	*/
+	public void setGravity(double gr){
+		gravity = gr;
+	}
+
+	/**
 	* @param e   Physic element
 	*/
 	public void addElement(PhysicsElement e) {

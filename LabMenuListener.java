@@ -77,9 +77,14 @@ public class LabMenuListener implements ActionListener {
 			String data = JOptionPane.showInputDialog("Enter delta t [s]");
 			world.setDelta_t(Double.parseDouble(data));
 		}
-		if (text.equals("View Refresh time")) {
+		if (text.equals("View refresh time")) {
 			String data = JOptionPane.showInputDialog("Enter sample-rate t [s]");
 			world.setRefreshPeriod(Double.parseDouble(data));
+		}
+
+		if (text.equals("Set gravity")) {
+			String data = JOptionPane.showInputDialog("Enter gravity value [m/s^2]");
+			world.setGravity(Double.parseDouble(data));
 		}
 	}
 }
