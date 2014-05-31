@@ -85,6 +85,5 @@ public class MyWorldView extends JPanel {
 		removeMouseMotionListener(mListener);
 		removeMouseListener(mListener);
 		removeKeyListener(mListener);
-		setFocusable(false);
 	}
 }
