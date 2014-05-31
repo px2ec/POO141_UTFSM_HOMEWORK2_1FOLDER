@@ -77,10 +77,14 @@ public class MyWorldView extends JPanel {
 
 	public void enableMouseListener(){
 		addMouseMotionListener(mListener);
-		addMouseListener(mListener);         
+		addMouseListener(mListener); 
+		addKeyListener(mListener);
+		setFocusable(true);        
 	}
 	public void desableMouseListener(){
 		removeMouseMotionListener(mListener);
 		removeMouseListener(mListener);
+		removeKeyListener(mListener);
+		setFocusable(false);
 	}
 }
