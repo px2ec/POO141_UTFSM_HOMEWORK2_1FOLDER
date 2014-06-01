@@ -1,7 +1,9 @@
 
 /**
  * Ball class
- * @author Pedro Espinoza, Luis Ojeda, Felipe Veas
+ * @author Pedro Espinoza
+ * @author Luis Ojeda
+ * @author Felipe Veas
  */
 
 import java.util.*;
